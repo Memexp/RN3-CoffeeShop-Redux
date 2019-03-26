@@ -12,7 +12,8 @@ import {
   List,
   ListItem,
   Picker,
-  Content
+  Content,
+  Icon
 } from "native-base";
 
 // Style
@@ -38,11 +39,23 @@ class CoffeeDetail extends Component {
       option: value
     });
   };
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title: navigation.getParam("coffeeshop").name,
+      headerRight: (
+        <Icon
+          name="shopping-cart"
+          type="FontAwesome"
+          onPress={() => navigation.navigate("Cart")}
+        />
+      )
+    };
+  };
 
   render() {
     const { coffeeShops, loading } = this.props.coffeeReducer;
     if (loading) return <Content />;
-    const coffeeshop = coffeeShops[0];
+    let coffeeshop = this.props.navigation.getParam("coffeeshop");
     return (
       <Content>
         <List>
@@ -55,7 +68,7 @@ class CoffeeDetail extends Component {
             </Left>
             <Body />
             <Right>
-              <Thumbnail bordered source={coffeeshop.img} />
+              <Thumbnail bordered source={{ uri: coffeeshop.img }} />
             </Right>
           </ListItem>
           <ListItem style={{ borderBottomWidth: 0 }}>

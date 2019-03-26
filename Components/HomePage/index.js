@@ -9,10 +9,7 @@ import { Container, Header } from "native-base";
 import styles from "./styles";
 
 // Components
-import CoffeeList from "../CoffeeList";
-import CoffeeCart from "../CoffeeCart";
-import CoffeeDetail from "../CoffeeDetail";
-import Login from "../Login";
+import AppContainer from "../Navigation";
 
 // Actions
 import { getCoffeeShops } from "../../store/actions/coffeeActions";
@@ -21,12 +18,14 @@ class HomePage extends Component {
   componentDidMount() {
     this.props.getCoffeeShops();
   }
+  static navigationOptions = {
+    title: null
+  };
   render() {
     return (
       <Container style={styles.transparent}>
         <View style={styles.overlay} />
-        <Header style={styles.transparent} />
-        <CoffeeList />
+        <AppContainer />
       </Container>
     );
   }
