@@ -10,7 +10,12 @@ const initialState = {
       option: "Large",
       quantity: 1
     }
-  ]
+  ],
+  orderHistory: {
+    order1: "Capuccino",
+    order2: "Latte",
+    order3: "Ice-Latte"
+  }
 };
 
 const cartReducer = (state = initialState, action) => {

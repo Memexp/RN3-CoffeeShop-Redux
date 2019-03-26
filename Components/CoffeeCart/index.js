@@ -6,6 +6,9 @@ import { Text, List, Button } from "native-base";
 // Component
 import CartItem from "./CartItem";
 
+// Navigation
+import { withNavigation } from "react-navigation";
+
 class CoffeeCart extends Component {
   render() {
     let items = this.props.items;
@@ -19,7 +22,11 @@ class CoffeeCart extends Component {
     return (
       <List>
         {cartItems}
-        <Button full danger>
+        <Button
+          full
+          danger
+          onPress={() => this.props.navigation.navigate("History")}
+        >
           <Text>Checkout</Text>
         </Button>
       </List>
