@@ -39,6 +39,7 @@ class CoffeeDetail extends Component {
       option: value
     });
   };
+  // make the icon a component, cleaner.. and we can use it anywhere
   static navigationOptions = ({ navigation }) => {
     return {
       title: navigation.getParam("coffeeshop").name,

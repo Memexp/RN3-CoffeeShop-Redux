@@ -56,6 +56,7 @@ class Login extends Component {
               </Form>
             </Body>
           </ListItem>
+          {/* replace instead of navigate so we don't have to null the left header in the list because there is no left! */}
           <Button
             full
             success
