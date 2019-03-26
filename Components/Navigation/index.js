@@ -21,7 +21,7 @@ const myStack = createStackNavigator(
       headerStyle: {
         backgroundColor: "rgb(20, 90, 100)"
       },
-      headerTextStyle: {
+      headerTitleStyle: {
         fontWeight: "bold"
       }
     },
